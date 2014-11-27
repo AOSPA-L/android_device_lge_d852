@@ -21,6 +21,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Get non-open-source specific aspects
 $(call inherit-product-if-exists, vendor/lge/d852/d852-vendor.mk)
 
+# Audio
+PRODUCT_COPY_FILES += \
+    device/lge/g3-common/configs/mixer_paths_qcwcn.xml:system/etc/mixer_paths.xml
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
